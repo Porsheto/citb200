@@ -1,10 +1,8 @@
 #include "textprinter.h"
 void TextPrinter::print(std::ostream &out, Invoice invoice){
-    for ( auto product : invoice.getProducts()) {
-        out << product.getName() << " (" << product.getPrice() << ")" << std::endl;
+    for ( auto item : invoice.getItems()) {
+        out << item.getQuantity()<< " x " << item.getProduct().getName() << " (" << item.getProduct().getPrice()  << ")" << std::endl;
 
     }
-
-
-    
+   
 }
