@@ -6,7 +6,7 @@
 
 class Item {
 public:
-    Item(Product p, int qty);
+    Item(const Product &p, int qty);
     Product getProduct();
     int getQuantity();
 private:
