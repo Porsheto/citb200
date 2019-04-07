@@ -14,3 +14,7 @@ vector<Product> Invoice::getProducts() {
 vector<Item> Invoice::getItems() { 
     return items;
 }
+double Invoice::computeItemTotal(Item item)
+{
+    return item.getQuantity()* item.getProduct().getPrice();
+}
