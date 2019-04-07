@@ -1,5 +1,5 @@
 #include "item.h"
-Item::Item( const Product &p, int qty) : product(p) {
+Item::Item( const Product *p, int qty) : product(p) {
     if (qty < 0) { 
         quantity = 0;
 
@@ -9,11 +9,11 @@ Item::Item( const Product &p, int qty) : product(p) {
 
 }
 
-Product Item::getProduct() {
-    return product;
+const Product & Item::getProduct() const {
+    return *product;
 }
 
-int Item::getQuantity() {
+const int & Item::getQuantity() const {
     return quantity;
 
 }
