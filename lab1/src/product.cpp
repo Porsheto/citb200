@@ -4,3 +4,11 @@ Product::Product(string name, double price) {
     this->price = price; 
     
 }
+string Product::getName()
+{
+    return this->name;
+}
+double Product::getPrice()
+{
+    return this->price;
+}
