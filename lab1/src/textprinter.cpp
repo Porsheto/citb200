@@ -1,8 +1,9 @@
 #include "textprinter.h"
 #include <iomanip> 
 
-void TextPrinter::print(std::ostream &out, Invoice invoice){
+void TextPrinter::print(std::ostream &out, const Invoice &invoice){
     out << std::fixed << std::setprecision (2);
+
     for ( auto item : invoice.getItems()) {
     out << item.getQuantity() << " x "
         << item.getProduct().getName() 
@@ -11,5 +12,7 @@ void TextPrinter::print(std::ostream &out, Invoice invoice){
         << std::endl;
 
     }
-   
+
+    out << "Subtotal: " << invoice.computeSubtotal() << std::endl;
+    out << "Tax:" << invoice.computeTax() << std::endl;   
 }
